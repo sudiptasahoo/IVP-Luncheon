@@ -1,0 +1,933 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		011197F61ED28DD200A4DDB7 /* SSVenueListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011197F41ED28DD200A4DDB7 /* SSVenueListCollectionViewCell.swift */; };
+		011197F71ED28DD200A4DDB7 /* SSVenueListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011197F51ED28DD200A4DDB7 /* SSVenueListCollectionViewCell.xib */; };
+		011197F91ED294D000A4DDB7 /* SSLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011197F81ED294D000A4DDB7 /* SSLaunchViewController.swift */; };
+		011197FB1ED295B100A4DDB7 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011197FA1ED295B100A4DDB7 /* LaunchViewController.swift */; };
+		0190FCF61ED289C900EF0537 /* SSNetworkHandShake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190FCF51ED289C900EF0537 /* SSNetworkHandShake.swift */; };
+		0190FCF81ED289D200EF0537 /* SSApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190FCF71ED289D200EF0537 /* SSApi.swift */; };
+		01A5CB721ED0D2B700F3920C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5CB711ED0D2B700F3920C /* AppDelegate.swift */; };
+		01A5CB741ED0D2B700F3920C /* SSLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5CB731ED0D2B700F3920C /* SSLandingViewController.swift */; };
+		01A5CB771ED0D2B700F3920C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A5CB751ED0D2B700F3920C /* Main.storyboard */; };
+		01A5CB7A1ED0D2B700F3920C /* IVP_Luncheon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01A5CB781ED0D2B700F3920C /* IVP_Luncheon.xcdatamodeld */; };
+		01A5CB7C1ED0D2B700F3920C /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01A5CB7B1ED0D2B700F3920C /* Icon.xcassets */; };
+		01A5CB7F1ED0D2B700F3920C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A5CB7D1ED0D2B700F3920C /* LaunchScreen.storyboard */; };
+		01A5CB8A1ED0D2B700F3920C /* IVP_LuncheonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5CB891ED0D2B700F3920C /* IVP_LuncheonTests.swift */; };
+		01A5CB951ED0D2B800F3920C /* IVP_LuncheonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5CB941ED0D2B800F3920C /* IVP_LuncheonUITests.swift */; };
+		01C63EFB1ED27CD6008A2465 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01C63EFA1ED27CD6008A2465 /* Media.xcassets */; };
+		62C4D831AF469D93335316FB /* Pods_IVP_Luncheon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BBC5916B3081D3F275475F /* Pods_IVP_Luncheon.framework */; };
+		8D44AFDD3920275F4F4B9348 /* libPods-IVP LuncheonUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B427EF98864FF12D1460061 /* libPods-IVP LuncheonUITests.a */; };
+		C0439A8A739D979831939D8D /* libPods-IVP LuncheonTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 364937FD962F591F7AB845E8 /* libPods-IVP LuncheonTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		01A5CB861ED0D2B700F3920C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01A5CB661ED0D2B700F3920C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01A5CB6D1ED0D2B700F3920C;
+			remoteInfo = "IVP Luncheon";
+		};
+		01A5CB911ED0D2B700F3920C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01A5CB661ED0D2B700F3920C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01A5CB6D1ED0D2B700F3920C;
+			remoteInfo = "IVP Luncheon";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		011197F41ED28DD200A4DDB7 /* SSVenueListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSVenueListCollectionViewCell.swift; sourceTree = "<group>"; };
+		011197F51ED28DD200A4DDB7 /* SSVenueListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSVenueListCollectionViewCell.xib; sourceTree = "<group>"; };
+		011197F81ED294D000A4DDB7 /* SSLaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLaunchViewController.swift; sourceTree = "<group>"; };
+		011197FA1ED295B100A4DDB7 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		0190FCF51ED289C900EF0537 /* SSNetworkHandShake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSNetworkHandShake.swift; sourceTree = "<group>"; };
+		0190FCF71ED289D200EF0537 /* SSApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSApi.swift; sourceTree = "<group>"; };
+		01A5CB6E1ED0D2B700F3920C /* IVP Luncheon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IVP Luncheon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01A5CB711ED0D2B700F3920C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		01A5CB731ED0D2B700F3920C /* SSLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLandingViewController.swift; sourceTree = "<group>"; };
+		01A5CB761ED0D2B700F3920C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		01A5CB791ED0D2B700F3920C /* IVP_Luncheon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IVP_Luncheon.xcdatamodel; sourceTree = "<group>"; };
+		01A5CB7B1ED0D2B700F3920C /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
+		01A5CB7E1ED0D2B700F3920C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		01A5CB801ED0D2B700F3920C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01A5CB851ED0D2B700F3920C /* IVP LuncheonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IVP LuncheonTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01A5CB891ED0D2B700F3920C /* IVP_LuncheonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVP_LuncheonTests.swift; sourceTree = "<group>"; };
+		01A5CB8B1ED0D2B700F3920C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01A5CB901ED0D2B700F3920C /* IVP LuncheonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IVP LuncheonUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01A5CB941ED0D2B800F3920C /* IVP_LuncheonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVP_LuncheonUITests.swift; sourceTree = "<group>"; };
+		01A5CB961ED0D2B800F3920C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01C63EFA1ED27CD6008A2465 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		364937FD962F591F7AB845E8 /* libPods-IVP LuncheonTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IVP LuncheonTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38613BBCF3C18FFF1997ABAE /* Pods-IVP Luncheon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IVP Luncheon.release.xcconfig"; path = "Pods/Target Support Files/Pods-IVP Luncheon/Pods-IVP Luncheon.release.xcconfig"; sourceTree = "<group>"; };
+		3B427EF98864FF12D1460061 /* libPods-IVP LuncheonUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IVP LuncheonUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		44BD28920155057913A30C71 /* Pods-IVP LuncheonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IVP LuncheonTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IVP LuncheonTests/Pods-IVP LuncheonTests.release.xcconfig"; sourceTree = "<group>"; };
+		5BD042F0E17122F5A2722491 /* Pods-IVP LuncheonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IVP LuncheonTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IVP LuncheonTests/Pods-IVP LuncheonTests.debug.xcconfig"; sourceTree = "<group>"; };
+		64BBC5916B3081D3F275475F /* Pods_IVP_Luncheon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IVP_Luncheon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2E55E22613855464908AEBF /* Pods-IVP Luncheon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IVP Luncheon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IVP Luncheon/Pods-IVP Luncheon.debug.xcconfig"; sourceTree = "<group>"; };
+		D3AFA0EF50E4D9B8B1430221 /* Pods-IVP LuncheonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IVP LuncheonUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IVP LuncheonUITests/Pods-IVP LuncheonUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DD70CC733EAF9454EE73C7E4 /* Pods-IVP LuncheonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IVP LuncheonUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IVP LuncheonUITests/Pods-IVP LuncheonUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01A5CB6B1ED0D2B700F3920C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62C4D831AF469D93335316FB /* Pods_IVP_Luncheon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01A5CB821ED0D2B700F3920C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0439A8A739D979831939D8D /* libPods-IVP LuncheonTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01A5CB8D1ED0D2B700F3920C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D44AFDD3920275F4F4B9348 /* libPods-IVP LuncheonUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00D2FB373D99F13708F859F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A2E55E22613855464908AEBF /* Pods-IVP Luncheon.debug.xcconfig */,
+				38613BBCF3C18FFF1997ABAE /* Pods-IVP Luncheon.release.xcconfig */,
+				5BD042F0E17122F5A2722491 /* Pods-IVP LuncheonTests.debug.xcconfig */,
+				44BD28920155057913A30C71 /* Pods-IVP LuncheonTests.release.xcconfig */,
+				DD70CC733EAF9454EE73C7E4 /* Pods-IVP LuncheonUITests.debug.xcconfig */,
+				D3AFA0EF50E4D9B8B1430221 /* Pods-IVP LuncheonUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		01A5CB651ED0D2B700F3920C = {
+			isa = PBXGroup;
+			children = (
+				01A5CB701ED0D2B700F3920C /* IVP Luncheon */,
+				01A5CB881ED0D2B700F3920C /* IVP LuncheonTests */,
+				01A5CB931ED0D2B800F3920C /* IVP LuncheonUITests */,
+				01A5CB6F1ED0D2B700F3920C /* Products */,
+				00D2FB373D99F13708F859F6 /* Pods */,
+				B78BA6C664AF3DDBEBF66198 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		01A5CB6F1ED0D2B700F3920C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01A5CB6E1ED0D2B700F3920C /* IVP Luncheon.app */,
+				01A5CB851ED0D2B700F3920C /* IVP LuncheonTests.xctest */,
+				01A5CB901ED0D2B700F3920C /* IVP LuncheonUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		01A5CB701ED0D2B700F3920C /* IVP Luncheon */ = {
+			isa = PBXGroup;
+			children = (
+				01C63EFE1ED27D0E008A2465 /* Services */,
+				01C63EF71ED27C61008A2465 /* Supporting Files */,
+				01C63EF61ED27C36008A2465 /* Launch Screen */,
+				01C63EF51ED27BF7008A2465 /* Image/Assets */,
+				01C63EF41ED27BF0008A2465 /* View Controller */,
+				01C63EF31ED27BE7008A2465 /* Views */,
+				01C63EF21ED27BE1008A2465 /* View Model */,
+				01C63EF11ED27BD3008A2465 /* Utils */,
+				01C63EEF1ED27BAD008A2465 /* App Treasures */,
+				01C63EEE1ED27B9D008A2465 /* Extensions */,
+				01C63EED1ED27B90008A2465 /* Model */,
+				01A5CBA21ED0D2D300F3920C /* Network */,
+				01A5CB711ED0D2B700F3920C /* AppDelegate.swift */,
+			);
+			path = "IVP Luncheon";
+			sourceTree = "<group>";
+		};
+		01A5CB881ED0D2B700F3920C /* IVP LuncheonTests */ = {
+			isa = PBXGroup;
+			children = (
+				01A5CB891ED0D2B700F3920C /* IVP_LuncheonTests.swift */,
+				01A5CB8B1ED0D2B700F3920C /* Info.plist */,
+			);
+			path = "IVP LuncheonTests";
+			sourceTree = "<group>";
+		};
+		01A5CB931ED0D2B800F3920C /* IVP LuncheonUITests */ = {
+			isa = PBXGroup;
+			children = (
+				01A5CB941ED0D2B800F3920C /* IVP_LuncheonUITests.swift */,
+				01A5CB961ED0D2B800F3920C /* Info.plist */,
+			);
+			path = "IVP LuncheonUITests";
+			sourceTree = "<group>";
+		};
+		01A5CBA21ED0D2D300F3920C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		01C63EED1ED27B90008A2465 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		01C63EEE1ED27B9D008A2465 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		01C63EEF1ED27BAD008A2465 /* App Treasures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "App Treasures";
+			sourceTree = "<group>";
+		};
+		01C63EF01ED27BCC008A2465 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				01A5CB751ED0D2B700F3920C /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		01C63EF11ED27BD3008A2465 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		01C63EF21ED27BE1008A2465 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "View Model";
+			sourceTree = "<group>";
+		};
+		01C63EF31ED27BE7008A2465 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				01C63EFD1ED27CFF008A2465 /* Custom CVC */,
+				01C63EFC1ED27CF6008A2465 /* Custom TVC */,
+				01C63EF01ED27BCC008A2465 /* Storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		01C63EF41ED27BF0008A2465 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				01C63EF91ED27C88008A2465 /* Landing Screen */,
+				011197F81ED294D000A4DDB7 /* SSLaunchViewController.swift */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		01C63EF51ED27BF7008A2465 /* Image/Assets */ = {
+			isa = PBXGroup;
+			children = (
+				01A5CB7B1ED0D2B700F3920C /* Icon.xcassets */,
+				01C63EFA1ED27CD6008A2465 /* Media.xcassets */,
+			);
+			name = Image/Assets;
+			sourceTree = "<group>";
+		};
+		01C63EF61ED27C36008A2465 /* Launch Screen */ = {
+			isa = PBXGroup;
+			children = (
+				011197FA1ED295B100A4DDB7 /* LaunchViewController.swift */,
+				01A5CB7D1ED0D2B700F3920C /* LaunchScreen.storyboard */,
+			);
+			name = "Launch Screen";
+			sourceTree = "<group>";
+		};
+		01C63EF71ED27C61008A2465 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01A5CB781ED0D2B700F3920C /* IVP_Luncheon.xcdatamodeld */,
+				01A5CB801ED0D2B700F3920C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01C63EF91ED27C88008A2465 /* Landing Screen */ = {
+			isa = PBXGroup;
+			children = (
+				01A5CB731ED0D2B700F3920C /* SSLandingViewController.swift */,
+			);
+			name = "Landing Screen";
+			sourceTree = "<group>";
+		};
+		01C63EFC1ED27CF6008A2465 /* Custom TVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Custom TVC";
+			sourceTree = "<group>";
+		};
+		01C63EFD1ED27CFF008A2465 /* Custom CVC */ = {
+			isa = PBXGroup;
+			children = (
+				011197F41ED28DD200A4DDB7 /* SSVenueListCollectionViewCell.swift */,
+				011197F51ED28DD200A4DDB7 /* SSVenueListCollectionViewCell.xib */,
+			);
+			name = "Custom CVC";
+			sourceTree = "<group>";
+		};
+		01C63EFE1ED27D0E008A2465 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				01C63F031ED27E87008A2465 /* Network */,
+				01C63F001ED27D1A008A2465 /* API */,
+				01C63EFF1ED27D14008A2465 /* Persistence */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		01C63EFF1ED27D14008A2465 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Persistence;
+			sourceTree = "<group>";
+		};
+		01C63F001ED27D1A008A2465 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0190FCF71ED289D200EF0537 /* SSApi.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		01C63F031ED27E87008A2465 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0190FCF51ED289C900EF0537 /* SSNetworkHandShake.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		B78BA6C664AF3DDBEBF66198 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64BBC5916B3081D3F275475F /* Pods_IVP_Luncheon.framework */,
+				364937FD962F591F7AB845E8 /* libPods-IVP LuncheonTests.a */,
+				3B427EF98864FF12D1460061 /* libPods-IVP LuncheonUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01A5CB6D1ED0D2B700F3920C /* IVP Luncheon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01A5CB991ED0D2B800F3920C /* Build configuration list for PBXNativeTarget "IVP Luncheon" */;
+			buildPhases = (
+				347D877DED4273CAA64D4002 /* [CP] Check Pods Manifest.lock */,
+				01A5CB6A1ED0D2B700F3920C /* Sources */,
+				01A5CB6B1ED0D2B700F3920C /* Frameworks */,
+				01A5CB6C1ED0D2B700F3920C /* Resources */,
+				D11D68B62D83DB952AC6E2A5 /* [CP] Embed Pods Frameworks */,
+				A9BFCD135F86BDA1752DA76E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IVP Luncheon";
+			productName = "IVP Luncheon";
+			productReference = 01A5CB6E1ED0D2B700F3920C /* IVP Luncheon.app */;
+			productType = "com.apple.product-type.application";
+		};
+		01A5CB841ED0D2B700F3920C /* IVP LuncheonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01A5CB9C1ED0D2B800F3920C /* Build configuration list for PBXNativeTarget "IVP LuncheonTests" */;
+			buildPhases = (
+				03B27BD04895D417658E7C17 /* [CP] Check Pods Manifest.lock */,
+				01A5CB811ED0D2B700F3920C /* Sources */,
+				01A5CB821ED0D2B700F3920C /* Frameworks */,
+				01A5CB831ED0D2B700F3920C /* Resources */,
+				59B15A5DEDB8584FDA54CA75 /* [CP] Embed Pods Frameworks */,
+				0D7DB9D943102D97BFDE94CF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01A5CB871ED0D2B700F3920C /* PBXTargetDependency */,
+			);
+			name = "IVP LuncheonTests";
+			productName = "IVP LuncheonTests";
+			productReference = 01A5CB851ED0D2B700F3920C /* IVP LuncheonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		01A5CB8F1ED0D2B700F3920C /* IVP LuncheonUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01A5CB9F1ED0D2B800F3920C /* Build configuration list for PBXNativeTarget "IVP LuncheonUITests" */;
+			buildPhases = (
+				F68576C221988EE445DEDDBD /* [CP] Check Pods Manifest.lock */,
+				01A5CB8C1ED0D2B700F3920C /* Sources */,
+				01A5CB8D1ED0D2B700F3920C /* Frameworks */,
+				01A5CB8E1ED0D2B700F3920C /* Resources */,
+				0089729DC75BD837B67BCAC6 /* [CP] Embed Pods Frameworks */,
+				E92B50348E4584485A6DA1B8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01A5CB921ED0D2B700F3920C /* PBXTargetDependency */,
+			);
+			name = "IVP LuncheonUITests";
+			productName = "IVP LuncheonUITests";
+			productReference = 01A5CB901ED0D2B700F3920C /* IVP LuncheonUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01A5CB661ED0D2B700F3920C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SS;
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Sudipta Sahoo <dev@sudiptasahoo.in>. This file is part of Indus Valley Partners interview process. This file can not be copied and/or distributed without the express permission of Sudipta Sahoo.";
+				TargetAttributes = {
+					01A5CB6D1ED0D2B700F3920C = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = N5BV6E5637;
+						ProvisioningStyle = Automatic;
+					};
+					01A5CB841ED0D2B700F3920C = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = N5BV6E5637;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 01A5CB6D1ED0D2B700F3920C;
+					};
+					01A5CB8F1ED0D2B700F3920C = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = N5BV6E5637;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 01A5CB6D1ED0D2B700F3920C;
+					};
+				};
+			};
+			buildConfigurationList = 01A5CB691ED0D2B700F3920C /* Build configuration list for PBXProject "IVP Luncheon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 01A5CB651ED0D2B700F3920C;
+			productRefGroup = 01A5CB6F1ED0D2B700F3920C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01A5CB6D1ED0D2B700F3920C /* IVP Luncheon */,
+				01A5CB841ED0D2B700F3920C /* IVP LuncheonTests */,
+				01A5CB8F1ED0D2B700F3920C /* IVP LuncheonUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		01A5CB6C1ED0D2B700F3920C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01A5CB7F1ED0D2B700F3920C /* LaunchScreen.storyboard in Resources */,
+				01A5CB7C1ED0D2B700F3920C /* Icon.xcassets in Resources */,
+				011197F71ED28DD200A4DDB7 /* SSVenueListCollectionViewCell.xib in Resources */,
+				01C63EFB1ED27CD6008A2465 /* Media.xcassets in Resources */,
+				01A5CB771ED0D2B700F3920C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01A5CB831ED0D2B700F3920C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01A5CB8E1ED0D2B700F3920C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0089729DC75BD837B67BCAC6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IVP LuncheonUITests/Pods-IVP LuncheonUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		03B27BD04895D417658E7C17 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0D7DB9D943102D97BFDE94CF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IVP LuncheonTests/Pods-IVP LuncheonTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		347D877DED4273CAA64D4002 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		59B15A5DEDB8584FDA54CA75 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IVP LuncheonTests/Pods-IVP LuncheonTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9BFCD135F86BDA1752DA76E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IVP Luncheon/Pods-IVP Luncheon-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D11D68B62D83DB952AC6E2A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IVP Luncheon/Pods-IVP Luncheon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E92B50348E4584485A6DA1B8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IVP LuncheonUITests/Pods-IVP LuncheonUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F68576C221988EE445DEDDBD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01A5CB6A1ED0D2B700F3920C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01A5CB7A1ED0D2B700F3920C /* IVP_Luncheon.xcdatamodeld in Sources */,
+				0190FCF81ED289D200EF0537 /* SSApi.swift in Sources */,
+				011197F91ED294D000A4DDB7 /* SSLaunchViewController.swift in Sources */,
+				01A5CB741ED0D2B700F3920C /* SSLandingViewController.swift in Sources */,
+				0190FCF61ED289C900EF0537 /* SSNetworkHandShake.swift in Sources */,
+				011197F61ED28DD200A4DDB7 /* SSVenueListCollectionViewCell.swift in Sources */,
+				01A5CB721ED0D2B700F3920C /* AppDelegate.swift in Sources */,
+				011197FB1ED295B100A4DDB7 /* LaunchViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01A5CB811ED0D2B700F3920C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01A5CB8A1ED0D2B700F3920C /* IVP_LuncheonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01A5CB8C1ED0D2B700F3920C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01A5CB951ED0D2B800F3920C /* IVP_LuncheonUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01A5CB871ED0D2B700F3920C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01A5CB6D1ED0D2B700F3920C /* IVP Luncheon */;
+			targetProxy = 01A5CB861ED0D2B700F3920C /* PBXContainerItemProxy */;
+		};
+		01A5CB921ED0D2B700F3920C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01A5CB6D1ED0D2B700F3920C /* IVP Luncheon */;
+			targetProxy = 01A5CB911ED0D2B700F3920C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		01A5CB751ED0D2B700F3920C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01A5CB761ED0D2B700F3920C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		01A5CB7D1ED0D2B700F3920C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01A5CB7E1ED0D2B700F3920C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		01A5CB971ED0D2B800F3920C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		01A5CB981ED0D2B800F3920C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		01A5CB9A1ED0D2B800F3920C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2E55E22613855464908AEBF /* Pods-IVP Luncheon.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N5BV6E5637;
+				INFOPLIST_FILE = "IVP Luncheon/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sudipta.IVP-Luncheon";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		01A5CB9B1ED0D2B800F3920C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38613BBCF3C18FFF1997ABAE /* Pods-IVP Luncheon.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N5BV6E5637;
+				INFOPLIST_FILE = "IVP Luncheon/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sudipta.IVP-Luncheon";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		01A5CB9D1ED0D2B800F3920C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BD042F0E17122F5A2722491 /* Pods-IVP LuncheonTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = N5BV6E5637;
+				INFOPLIST_FILE = "IVP LuncheonTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sudipta.IVP-LuncheonTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IVP Luncheon.app/IVP Luncheon";
+			};
+			name = Debug;
+		};
+		01A5CB9E1ED0D2B800F3920C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44BD28920155057913A30C71 /* Pods-IVP LuncheonTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = N5BV6E5637;
+				INFOPLIST_FILE = "IVP LuncheonTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sudipta.IVP-LuncheonTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IVP Luncheon.app/IVP Luncheon";
+			};
+			name = Release;
+		};
+		01A5CBA01ED0D2B800F3920C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD70CC733EAF9454EE73C7E4 /* Pods-IVP LuncheonUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = N5BV6E5637;
+				INFOPLIST_FILE = "IVP LuncheonUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sudipta.IVP-LuncheonUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "IVP Luncheon";
+			};
+			name = Debug;
+		};
+		01A5CBA11ED0D2B800F3920C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3AFA0EF50E4D9B8B1430221 /* Pods-IVP LuncheonUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = N5BV6E5637;
+				INFOPLIST_FILE = "IVP LuncheonUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sudipta.IVP-LuncheonUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "IVP Luncheon";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01A5CB691ED0D2B700F3920C /* Build configuration list for PBXProject "IVP Luncheon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01A5CB971ED0D2B800F3920C /* Debug */,
+				01A5CB981ED0D2B800F3920C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01A5CB991ED0D2B800F3920C /* Build configuration list for PBXNativeTarget "IVP Luncheon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01A5CB9A1ED0D2B800F3920C /* Debug */,
+				01A5CB9B1ED0D2B800F3920C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01A5CB9C1ED0D2B800F3920C /* Build configuration list for PBXNativeTarget "IVP LuncheonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01A5CB9D1ED0D2B800F3920C /* Debug */,
+				01A5CB9E1ED0D2B800F3920C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01A5CB9F1ED0D2B800F3920C /* Build configuration list for PBXNativeTarget "IVP LuncheonUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01A5CBA01ED0D2B800F3920C /* Debug */,
+				01A5CBA11ED0D2B800F3920C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		01A5CB781ED0D2B700F3920C /* IVP_Luncheon.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				01A5CB791ED0D2B700F3920C /* IVP_Luncheon.xcdatamodel */,
+			);
+			currentVersion = 01A5CB791ED0D2B700F3920C /* IVP_Luncheon.xcdatamodel */;
+			path = IVP_Luncheon.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 01A5CB661ED0D2B700F3920C /* Project object */;
+}
