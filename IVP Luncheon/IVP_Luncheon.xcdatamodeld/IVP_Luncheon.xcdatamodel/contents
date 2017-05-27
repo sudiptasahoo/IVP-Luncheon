@@ -5,13 +5,7 @@
         <attribute name="reviewText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="venueId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Venue" representedClassName="Venue" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="reviews" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Review" syncable="YES"/>
-    </entity>
     <elements>
         <element name="Review" positionX="-54" positionY="18" width="128" height="90"/>
-        <element name="Venue" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>

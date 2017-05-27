@@ -7,12 +7,11 @@
 //
 
 import Foundation
-import CoreData
+import RealmSwift
 
-class Review: NSManagedObject {
+class Review: Object {
 
-    @NSManaged public var id: String?
-    @NSManaged public var venueId: String?
-    @NSManaged public var reviewText: String?
-
+    dynamic var id = ""
+    dynamic var venueId = ""
+    dynamic var reviewText = ""
 }

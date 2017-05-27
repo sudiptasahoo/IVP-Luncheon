@@ -11,13 +11,13 @@ import UIKit
 extension URLComponents {
     
     mutating func appendQueryItem(name: String, value: String) {
-        var queryItems: [URLQueryItem] = self.queryItems!
+        var queryItems: [URLQueryItem] = self.queryItems ?? [URLQueryItem]()
         queryItems.append(NSURLQueryItem(name: name, value: value) as URLQueryItem)
         self.queryItems = queryItems as [URLQueryItem]
     }
     
     mutating func appendQueryItems(_ additionalQueryItems : [URLQueryItem]) {
-        var queryItems: [URLQueryItem] = self.queryItems!
+        var queryItems: [URLQueryItem] = self.queryItems ?? [URLQueryItem]()
         queryItems.append(contentsOf: additionalQueryItems)
         self.queryItems = queryItems as [URLQueryItem]
     }

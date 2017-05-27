@@ -12,7 +12,6 @@ class SSLandingViewModel: NSObject {
 
     override init() {
         super.init()
-        
     }
     
 }

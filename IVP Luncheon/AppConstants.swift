@@ -25,7 +25,7 @@ struct Constants {
         struct FOURSQUARE_API {
             static let scheme = "https"
             static let host = "api.foursquare.com"
-            static let path = "v2/venues/search"
+            static let path = "/v2/venues/search"
         }
     }
     
@@ -45,5 +45,17 @@ struct Constants {
     
     struct DateFormat {
         
+    }
+    
+    struct KEYS {
+        struct COORDINATE {
+            
+            static let USER_COORDINATE = "USER_COORDINATE"
+            
+            static let USER_LATITUDE = "USER_LATITUDE"
+            static let USER_LONGITUDE = "USER_LONGITUDE"
+            static let USER_ACCURACY = "USER_ACCURACY"
+
+        }
     }
 }

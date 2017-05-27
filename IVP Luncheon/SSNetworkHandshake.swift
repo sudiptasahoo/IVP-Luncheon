@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 
 //This is the Network Interceptor and single point of entry/exit for any network call throughout the app

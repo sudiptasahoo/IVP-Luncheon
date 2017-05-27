@@ -8,9 +8,10 @@
 
 import UIKit
 import Alamofire
+import RealmSwift
 
 
-class SSLandingViewController : UIViewController {
+class SSLandingViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -70,9 +71,74 @@ class SSLandingViewController : UIViewController {
         }
     }
     
+    func saveReview(){
+        
+        let review = Review()
+        review.id = "123"
+        review.venueId = "234"
+        review.reviewText = "abc"
+        
+        let realm = try! Realm()
+
+        try! realm.write {
+            realm.add(review)
+        }
+        
+        let reviews = realm.objects(Review.self)
+        print(reviews[0].reviewText)
+
+    }
+    
     func getFoursquareVenues(){
-        
-        
+        self.collectionView.layoutIfNeeded()
+        self.saveReview()
+        SSApiService().searchVenues(categoryId: Constants.FOURSQUARE.FOOD_CATEGORY_ID, lat: SSLocationUtility.getUserLatestLatitude(), long: SSLocationUtility.getUserLatestLongitude(), success: { (data) in
+            
+            if(self.venues.count==0){
+                self.hideSplashScreen()
+            }
+            
+            do {
+                
+                let response = try JSONSerialization.jsonObject(with:data
+                    , options:
+                    JSONSerialization.ReadingOptions.mutableLeaves) as! NSDictionary
+                
+                if (response != nil){
+                    
+                    let venueResponse = VenueResponse.init(dictionary: response)
+                    self.venues = (venueResponse?.response?.venues)!
+                    
+                    DispatchQueue.main.async {
+                        
+                        self.collectionView.reloadData()
+                        self.collectionView.layoutIfNeeded()
+                        self.refresher.endRefreshing()
+                    }
+                }
+               
+                
+            } catch let error {
+                
+                print("JSON Processing Failed \(error)")
+                DispatchQueue.main.async {
+                    self.refresher.endRefreshing()
+                }
+            }
+
+            
+        }, failure: { (error) in
+            print("Network Error \(error)")
+            //Scope for better error handling with Retry button, etc
+            if(self.venues.count==0){
+                self.hideSplashScreen()
+            }
+            
+            DispatchQueue.main.async {
+                self.refresher.endRefreshing()
+            }
+
+        })
     }
     
     
@@ -86,16 +152,25 @@ class SSLandingViewController : UIViewController {
         return venues.count
     }
     
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+        let cell : SSVenueListCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "SSVenueListCollectionViewCell",
+                                                                                   for: indexPath) as! SSVenueListCollectionViewCell
+        cell.backgroundColor = UIColor.white
+        let venue = venues[indexPath.row]
+        cell.titleLbl.text = venue.name
+        return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        
+        return CGSize(width: collectionView.bounds.size.width, height: 102)
     }
-    
     
     // MARK: - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

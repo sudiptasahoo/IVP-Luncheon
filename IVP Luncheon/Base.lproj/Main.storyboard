@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uJq-Qo-Ue0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -54,13 +54,14 @@
                             <constraint firstItem="qBb-et-YUg" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="cec-aA-4kY"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="2kE-aS-CDa"/>
                     <connections>
                         <outlet property="collectionView" destination="qBb-et-YUg" id="YsU-BF-DtT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
+            <point key="canvasLocation" x="964" y="36.431784107946029"/>
         </scene>
         <!--Launch View Controller-->
         <scene sceneID="IYr-db-d5g">
@@ -95,6 +96,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKK-Be-oOW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1279" y="36"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ehG-cj-VxA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uJq-Qo-Ue0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="s8D-oa-Cde">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5Gx-12-1mq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="29y-Vz-FID" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
         </scene>
     </scenes>
     <resources>

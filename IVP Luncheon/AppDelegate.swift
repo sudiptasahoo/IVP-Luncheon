@@ -13,10 +13,15 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var locationService : SSLocationService!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        //Init location service
+        locationService = SSLocationService.shared
+        
+        //
+        SSLocationUtility.saveUpdatedCoordinate(lat: Constants.IVP.GURGAON_OFFICE.COORDINATE.lat, long: Constants.IVP.GURGAON_OFFICE.COORDINATE.long, accuracy: "50")
         return true
     }
 
