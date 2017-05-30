@@ -337,7 +337,8 @@ extension SSVenueDetailsViewController : SSLeaveTipDelegate{
     let vc = SSCommonUtilities.instantiateViewController("SSReviewViewController") as! SSReviewViewController
     vc.venueId = venueId
     vc.venueName = venue?.name
-    
+    vc.delegate = self
+
     self.navigationController?.pushViewController(vc, animated: true)
     
   }
@@ -365,9 +366,28 @@ extension SSVenueDetailsViewController: VenueActionProtocol{
     let vc = SSCommonUtilities.instantiateViewController("SSReviewViewController") as! SSReviewViewController
     vc.venueId = venueId
     vc.venueName = venue?.name
+    vc.delegate = self
     self.navigationController?.pushViewController(vc, animated: true)
     
     //Scope to refresh this screen when user returns from Post Review screen.
     
+  }
+}
+
+extension SSVenueDetailsViewController: ReviewProtocol{
+  
+  func reviewAdded() {
+    
+    self.navigationController?.popViewController(animated: true)
+    
+    refreshTips()
+    self.tableview.reloadSections(NSIndexSet(index: 3) as IndexSet, with: UITableViewRowAnimation.automatic)
+    
+    let alertController = UIAlertController(title: "Success", message: "Your review is saved!", preferredStyle: .alert)
+    let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+    alertController.addAction(defaultAction)
+    
+    self.present(alertController, animated: true, completion: nil)
+
   }
 }

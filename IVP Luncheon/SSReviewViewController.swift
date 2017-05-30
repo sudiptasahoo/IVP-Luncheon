@@ -8,12 +8,17 @@
 
 import UIKit
 
+protocol ReviewProtocol {
+  func reviewAdded()
+}
+
 class SSReviewViewController: UIViewController {
   
   @IBOutlet weak var reviewTF: UITextField!
   @IBOutlet weak var postBtn: UIButton!
   var venueId : String!
   var venueName : String!
+  var delegate : ReviewProtocol?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,7 +29,7 @@ class SSReviewViewController: UIViewController {
   @IBAction func postBtnAction(_ sender: UIButton) {
     
     SSTipPersistenceService().save(reviewTF.text!, forVenueId: venueId)
-    self.navigationController?.popViewController(animated: true)
+    delegate?.reviewAdded()
   }
   
   override func didReceiveMemoryWarning() {
