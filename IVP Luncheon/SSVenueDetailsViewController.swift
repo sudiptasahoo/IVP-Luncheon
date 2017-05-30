@@ -187,15 +187,15 @@ extension SSVenueDetailsViewController: UITableViewDataSource{
           cell.thumbsUpBtn.setImage(UIImage(named:"thumbsUp_selected"), for: UIControlState.normal)
         } else{
           cell.thumbsUpBtn.setImage(UIImage(named:"thumbsUp"), for: UIControlState.normal)
-
+          
         }
         
         if reviews[0].thumbsDown{
           cell.thumbsDownBtn.setImage(UIImage(named:"thumbsDown_selected"), for: UIControlState.normal)
-
+          
         } else{
           cell.thumbsDownBtn.setImage(UIImage(named:"thumbsDown"), for: UIControlState.normal)
-
+          
         }
       }
       
@@ -285,7 +285,7 @@ extension SSVenueDetailsViewController : UITableViewDelegate{
         }
       }
       return 50
-     
+      
     case 2:
       return 108
     case 3:
@@ -338,7 +338,7 @@ extension SSVenueDetailsViewController : SSLeaveTipDelegate{
     vc.venueId = venueId
     vc.venueName = venue?.name
     vc.delegate = self
-
+    
     self.navigationController?.pushViewController(vc, animated: true)
     
   }
@@ -381,13 +381,16 @@ extension SSVenueDetailsViewController: ReviewProtocol{
     self.navigationController?.popViewController(animated: true)
     
     refreshTips()
-    self.tableview.reloadSections(NSIndexSet(index: 3) as IndexSet, with: UITableViewRowAnimation.automatic)
+    DispatchQueue.main.async {
+      
+      self.tableview.reloadSections(NSIndexSet(index: 3) as IndexSet, with: UITableViewRowAnimation.automatic)
+      
+      let alertController = UIAlertController(title: "Success", message: "Your review is saved!", preferredStyle: .alert)
+      let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+      alertController.addAction(defaultAction)
+      
+      self.present(alertController, animated: true, completion: nil)
+    }
     
-    let alertController = UIAlertController(title: "Success", message: "Your review is saved!", preferredStyle: .alert)
-    let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-    alertController.addAction(defaultAction)
-    
-    self.present(alertController, animated: true, completion: nil)
-
   }
 }
