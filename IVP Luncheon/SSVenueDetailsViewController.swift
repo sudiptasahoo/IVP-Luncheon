@@ -181,7 +181,7 @@ extension SSVenueDetailsViewController: UITableViewDataSource{
       cell.ratingLbl.backgroundColor = UIColor(hexString: (venue?.ratingColor)!)
       cell.delegate = self
       cell.venueId = venueId
-      
+      cell.selectionStyle = .none
       if reviews.count != 0{
         if reviews[0].thumbsUp{
           cell.thumbsUpBtn.setImage(UIImage(named:"thumbsUp_selected"), for: UIControlState.normal)
@@ -275,7 +275,7 @@ extension SSVenueDetailsViewController : UITableViewDelegate{
     
     switch indexPath.section {
     case 0:
-      return 300
+      return 246
     case 1:
       
       if let location = venue?.location{

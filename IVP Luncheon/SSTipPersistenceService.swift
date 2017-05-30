@@ -50,7 +50,7 @@ class SSTipPersistenceService: NSObject {
   
   func getAllReviewsFor(_ venueId: String) -> Results<Review>{
     
-    let result =  realm.objects(Review.self).filter("venueId = '\(venueId)'")
+    let result =  realm.objects(Review.self).filter("venueId == '\(venueId)'")
     return result
     
   }

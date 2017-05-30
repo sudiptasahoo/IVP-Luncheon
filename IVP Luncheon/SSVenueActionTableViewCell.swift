@@ -33,7 +33,6 @@ class SSVenueActionTableViewCell: UITableViewCell {
     super.awakeFromNib()
     // Initialization code
     self.bannerImage.clipsToBounds = true
-    self.bgView.isUserInteractionEnabled = false
   }
   
   @IBAction func thumbsUpAction(_ sender: Any) {
