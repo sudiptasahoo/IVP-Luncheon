@@ -12,26 +12,27 @@ import Foundation
  
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
-public class Response {
-	public var venues : Array<Venue>?
-	public var confident : String?
+public class Price {
+	public var tier : Int?
+	public var message : String?
+	public var currency : String?
 
 /**
     Returns an array of models based on given dictionary.
     
     Sample usage:
-    let response_list = Response.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
+    let price_list = Price.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
 
     - parameter array:  NSArray from JSON dictionary.
 
-    - returns: Array of Response Instances.
+    - returns: Array of Price Instances.
 */
-    public class func modelsFromDictionaryArray(array:NSArray) -> [Response]
+    public class func modelsFromDictionaryArray(array:NSArray) -> [Price]
     {
-        var models:[Response] = []
+        var models:[Price] = []
         for item in array
         {
-            models.append(Response(dictionary: item as! NSDictionary)!)
+            models.append(Price(dictionary: item as! NSDictionary)!)
         }
         return models
     }
@@ -40,16 +41,17 @@ public class Response {
     Constructs the object based on the given dictionary.
     
     Sample usage:
-    let response = Response(someDictionaryFromJSON)
+    let price = Price(someDictionaryFromJSON)
 
     - parameter dictionary:  NSDictionary from JSON.
 
-    - returns: Response Instance.
+    - returns: Price Instance.
 */
 	required public init?(dictionary: NSDictionary) {
 
-		if (dictionary["venues"] != nil) { venues = Venue.modelsFromDictionaryArray(array: dictionary["venues"] as! NSArray) }
-		confident = dictionary["confident"] as? String
+		tier = dictionary["tier"] as? Int
+		message = dictionary["message"] as? String
+		currency = dictionary["currency"] as? String
 	}
 
 		
@@ -62,7 +64,9 @@ public class Response {
 
 		let dictionary = NSMutableDictionary()
 
-		dictionary.setValue(self.confident, forKey: "confident")
+		dictionary.setValue(self.tier, forKey: "tier")
+		dictionary.setValue(self.message, forKey: "message")
+		dictionary.setValue(self.currency, forKey: "currency")
 
 		return dictionary
 	}

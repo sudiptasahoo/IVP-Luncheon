@@ -15,7 +15,7 @@ import Foundation
 public class HereNow {
 	public var count : Int?
 	public var summary : String?
-	public var groups : Array<String>?
+	public var groups : Array<Group>?
 
 /**
     Returns an array of models based on given dictionary.
@@ -51,7 +51,7 @@ public class HereNow {
 
 		count = dictionary["count"] as? Int
 		summary = dictionary["summary"] as? String
-		//if (dictionary["groups"] != nil) { groups = Groups.modelsFromDictionaryArray(dictionary["groups"] as! NSArray) }
+		if (dictionary["groups"] != nil) { groups = Group.modelsFromDictionaryArray(array: dictionary["groups"] as! NSArray) }
 	}
 
 		

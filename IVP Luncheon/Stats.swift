@@ -16,6 +16,7 @@ public class Stats {
 	public var checkinsCount : Int?
 	public var usersCount : Int?
 	public var tipCount : Int?
+	public var visitsCount : Int?
 
 /**
     Returns an array of models based on given dictionary.
@@ -52,6 +53,7 @@ public class Stats {
 		checkinsCount = dictionary["checkinsCount"] as? Int
 		usersCount = dictionary["usersCount"] as? Int
 		tipCount = dictionary["tipCount"] as? Int
+		visitsCount = dictionary["visitsCount"] as? Int
 	}
 
 		
@@ -67,6 +69,7 @@ public class Stats {
 		dictionary.setValue(self.checkinsCount, forKey: "checkinsCount")
 		dictionary.setValue(self.usersCount, forKey: "usersCount")
 		dictionary.setValue(self.tipCount, forKey: "tipCount")
+		dictionary.setValue(self.visitsCount, forKey: "visitsCount")
 
 		return dictionary
 	}

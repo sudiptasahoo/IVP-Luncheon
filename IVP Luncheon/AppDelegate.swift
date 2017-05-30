@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //
         SSLocationUtility.saveUpdatedCoordinate(lat: Constants.IVP.GURGAON_OFFICE.COORDINATE.lat, long: Constants.IVP.GURGAON_OFFICE.COORDINATE.long, accuracy: "50")
+      
+        self.appDefaults()
+      
         return true
     }
 
@@ -94,5 +97,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+  func appDefaults(){
+    
+    UINavigationBar.appearance().barTintColor = UIColor(hexString: "0076ff")
+    UINavigationBar.appearance().isTranslucent = false
+    UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName : (UIFont(name: "HelveticaNeue-Medium", size: 18))!, NSForegroundColorAttributeName: UIColor.white]
+  }
+  
 }
 

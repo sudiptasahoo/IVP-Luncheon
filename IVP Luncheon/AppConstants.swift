@@ -25,7 +25,9 @@ struct Constants {
         struct FOURSQUARE_API {
             static let scheme = "https"
             static let host = "api.foursquare.com"
-            static let path = "/v2/venues/search"
+            static let explore = "/v2/venues/explore"
+            static let venueDetails = "/v2/venues/"
+
         }
     }
     

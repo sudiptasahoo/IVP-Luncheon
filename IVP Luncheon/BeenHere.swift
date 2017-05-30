@@ -13,6 +13,9 @@ import Foundation
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
 public class BeenHere {
+	public var count : Int?
+	public var unconfirmedCount : Int?
+	public var marked : String?
 	public var lastCheckinExpiredAt : Int?
 
 /**
@@ -47,6 +50,9 @@ public class BeenHere {
 */
 	required public init?(dictionary: NSDictionary) {
 
+		count = dictionary["count"] as? Int
+		unconfirmedCount = dictionary["unconfirmedCount"] as? Int
+		marked = dictionary["marked"] as? String
 		lastCheckinExpiredAt = dictionary["lastCheckinExpiredAt"] as? Int
 	}
 
@@ -60,6 +66,9 @@ public class BeenHere {
 
 		let dictionary = NSMutableDictionary()
 
+		dictionary.setValue(self.count, forKey: "count")
+		dictionary.setValue(self.unconfirmedCount, forKey: "unconfirmedCount")
+		dictionary.setValue(self.marked, forKey: "marked")
 		dictionary.setValue(self.lastCheckinExpiredAt, forKey: "lastCheckinExpiredAt")
 
 		return dictionary

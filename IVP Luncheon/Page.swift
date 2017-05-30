@@ -12,26 +12,25 @@ import Foundation
  
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
-public class VenueResponse {
-	public var meta : Meta?
-	public var response : Response?
+public class Page {
+	public var user : User?
 
 /**
     Returns an array of models based on given dictionary.
     
     Sample usage:
-    let json4Swift_Base_list = Json4Swift_Base.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
+    let page_list = Page.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
 
     - parameter array:  NSArray from JSON dictionary.
 
-    - returns: Array of Json4Swift_Base Instances.
+    - returns: Array of Page Instances.
 */
-    public class func modelsFromDictionary(array:NSArray) -> [VenueResponse]
+    public class func modelsFromDictionaryArray(array:NSArray) -> [Page]
     {
-        var models:[VenueResponse] = []
+        var models:[Page] = []
         for item in array
         {
-            models.append(VenueResponse(dictionary: item as! NSDictionary)!)
+            models.append(Page(dictionary: item as! NSDictionary)!)
         }
         return models
     }
@@ -40,16 +39,15 @@ public class VenueResponse {
     Constructs the object based on the given dictionary.
     
     Sample usage:
-    let json4Swift_Base = Json4Swift_Base(someDictionaryFromJSON)
+    let page = Page(someDictionaryFromJSON)
 
     - parameter dictionary:  NSDictionary from JSON.
 
-    - returns: Json4Swift_Base Instance.
+    - returns: Page Instance.
 */
 	required public init?(dictionary: NSDictionary) {
 
-		if (dictionary["meta"] != nil) { meta = Meta(dictionary: dictionary["meta"] as! NSDictionary) }
-		if (dictionary["response"] != nil) { response = Response(dictionary: dictionary["response"] as! NSDictionary) }
+		if (dictionary["user"] != nil) { user = User(dictionary: dictionary["user"] as! NSDictionary) }
 	}
 
 		
@@ -62,8 +60,7 @@ public class VenueResponse {
 
 		let dictionary = NSMutableDictionary()
 
-		dictionary.setValue(self.meta?.dictionaryRepresentation(), forKey: "meta")
-		dictionary.setValue(self.response?.dictionaryRepresentation(), forKey: "response")
+		dictionary.setValue(self.user?.dictionaryRepresentation(), forKey: "user")
 
 		return dictionary
 	}

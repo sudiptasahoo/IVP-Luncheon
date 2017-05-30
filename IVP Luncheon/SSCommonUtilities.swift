@@ -34,4 +34,8 @@ class SSCommonUtilities: NSObject {
         }
     }
 
+  class func instantiateViewController(_ withName: String) -> Any{
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    return storyboard.instantiateViewController(withIdentifier: withName)
+  }
 }

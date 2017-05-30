@@ -15,6 +15,8 @@ class SSNetworkHandshake: NSObject {
 
     func getJsonResponse(fromRequest request: URLRequest, success: @escaping (_ data: Data) -> Void, failure:@escaping (_ error: Error)->Void){
         
+        print(String(describing: request.url))
+        
         let session = URLSession.shared
         
         if(currentReachabilityState != .notReachable){

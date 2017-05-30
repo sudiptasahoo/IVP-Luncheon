@@ -1,5 +1,5 @@
 //
-//  Review+CoreDataClass.swift
+//  Review.swift
 //  
 //
 //  Created by Sudipta Sahoo on 23/05/17.
@@ -13,5 +13,8 @@ class Review: Object {
 
     dynamic var id = ""
     dynamic var venueId = ""
-    dynamic var reviewText = ""
+    var tips = List<LocalTip>()
+    dynamic var thumbsUp = false
+    dynamic var thumbsDown = false
+
 }

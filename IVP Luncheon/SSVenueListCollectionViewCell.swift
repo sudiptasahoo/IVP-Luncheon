@@ -12,10 +12,11 @@ class SSVenueListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLbl: UILabel!
 
     @IBOutlet weak var distanceLbl: UILabel!
-    @IBOutlet weak var checkinsLbl: UILabel!
     @IBOutlet weak var categoriesLbl: UILabel!
-    @IBOutlet weak var beenHereLbl: UILabel!
-    @IBOutlet weak var tipsLbl: UILabel!
+    @IBOutlet weak var priceTierLbl: UILabel!
+    @IBOutlet weak var cityLbl: UILabel!
+    @IBOutlet weak var tipLbl: UILabel!
+  @IBOutlet weak var ratingLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -13,6 +13,8 @@ import Foundation
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
 public class Contact {
+	public var phone : Int?
+	public var formattedPhone : String?
 
 /**
     Returns an array of models based on given dictionary.
@@ -46,6 +48,8 @@ public class Contact {
 */
 	required public init?(dictionary: NSDictionary) {
 
+		phone = dictionary["phone"] as? Int
+		formattedPhone = dictionary["formattedPhone"] as? String
 	}
 
 		
@@ -58,6 +62,8 @@ public class Contact {
 
 		let dictionary = NSMutableDictionary()
 
+		dictionary.setValue(self.phone, forKey: "phone")
+		dictionary.setValue(self.formattedPhone, forKey: "formattedPhone")
 
 		return dictionary
 	}
