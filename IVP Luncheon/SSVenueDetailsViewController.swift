@@ -10,33 +10,33 @@ import UIKit
 import RealmSwift
 
 class SSVenueDetailsViewController: UIViewController {
-
+  
   @IBOutlet weak var loader: UIActivityIndicatorView!
   @IBOutlet weak var bannerImageView: UIImageView!
   @IBOutlet weak var tableview: UITableView!
   var venueId : String!
   var venue : Venue?
   var imageView : UIImageView!
-  var reviews : Results<Review>!
+  var reviews : Array<Review>!
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-      bannerImageView.frame = CGRect(x: bannerImageView.frame.origin.x, y: bannerImageView.frame.origin.y, width: bannerImageView.frame.size.width, height: UIScreen.main.bounds.height/3)
-      tableview.backgroundColor = .clear
-      self.reviews = SSTipPersistenceService().getAllReviewsFor(venueId)
-      
-      registerNibs()
-      
-      loadVenueDetails()
-      
-    }
-
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    bannerImageView.frame = CGRect(x: bannerImageView.frame.origin.x, y: bannerImageView.frame.origin.y, width: bannerImageView.frame.size.width, height: UIScreen.main.bounds.height/3)
+    tableview.backgroundColor = .clear
+    self.refreshTips()
+    
+    registerNibs()
+    
+    loadVenueDetails()
+    
+  }
+  
   func registerNibs(){
     
     let venueNib = UINib(nibName: "SSVenueActionTableViewCell", bundle: nil)
     tableview.register(venueNib, forCellReuseIdentifier: "SSVenueActionTableViewCell")
-
+    
     let locationNib = UINib(nibName: "SSVenueLocationTableViewCell", bundle: nil)
     tableview.register(locationNib, forCellReuseIdentifier: "SSVenueLocationTableViewCell")
     
@@ -51,7 +51,7 @@ class SSVenueDetailsViewController: UIViewController {
     
     let suggestionNib = UINib(nibName: "SSVenueNearbySuggestionTableViewCell", bundle: nil)
     tableview.register(suggestionNib, forCellReuseIdentifier: "SSVenueNearbySuggestionTableViewCell")
-
+    
   }
   
   
@@ -60,10 +60,10 @@ class SSVenueDetailsViewController: UIViewController {
     self.tableview.isHidden = true
     self.loader.startAnimating()
     
-    SSApiService().getVenueDetails(venueId: venueId, success: { (data) in
+    SSApiService().getVenueDetails(venueId: venueId, success: { [weak self] (data) in
       
-      self.loader.stopAnimating()
-      self.tableview.isHidden = false
+      self?.loader.stopAnimating()
+      self?.tableview.isHidden = false
       do {
         
         let response = try JSONSerialization.jsonObject(with:data
@@ -76,47 +76,53 @@ class SSVenueDetailsViewController: UIViewController {
           if responseJson != nil{
             let venueJson = responseJson.object(forKey: "venue") as! NSDictionary
             if venueJson != nil{
-              self.venue = Venue.init(dictionary: venueJson)
+              self?.venue = Venue.init(dictionary: venueJson)
             }
           }
-          }
+        }
         
-          DispatchQueue.main.async {
-            
-            self.tableview.reloadData()
-            self.tableview.layoutIfNeeded()
-          }
-      
+        DispatchQueue.main.async {
+          
+          self?.tableview.reloadData()
+          self?.tableview.layoutIfNeeded()
+          self?.title = self?.venue?.name
+        }
+        
         
       } catch let error {
         
         print("JSON Processing Failed \(error)")
         DispatchQueue.main.async {
-          self.loader.stopAnimating()
-          self.tableview.isHidden = false
+          self?.loader.stopAnimating()
+          self?.tableview.isHidden = false
           //Show up error popups
           
         }
       }
       
       
-    }, failure: { (error) in
-      print("Network Error \(error)")
-      //Scope for better error handling with Retry button, etc
-      DispatchQueue.main.async {
-        self.loader.stopAnimating()
-        self.tableview.isHidden = false
-        //Show up error popups
-      }
-      
+      }, failure: { (error) in
+        print("Network Error \(error)")
+        //Scope for better error handling with Retry button, etc
+        DispatchQueue.main.async {
+          self.loader.stopAnimating()
+          self.tableview.isHidden = false
+          //Show up error popups
+        }
+        
     })
     
   }
   
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
+  func refreshTips(){
+    
+    self.reviews = SSTipPersistenceService().getAllReviewsFor(venueId).toArray(ofType: Review.self)
+  }
 }
 
 
@@ -145,35 +151,62 @@ extension SSVenueDetailsViewController: UITableViewDataSource{
       case 2:
         return 1
       case 3:
-        if reviews != nil{
-            return reviews[0].tips.count
+        
+        if reviews.count > 0{
+          return reviews[0].tips.count
         }
-        return 0
+        return 1
       case 4:
         return 1
       default:
         return 0
       }
-
+      
     } else{
       return 0
     }
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-  
+    
     switch indexPath.section {
     case 0:
       
       let cell : SSVenueActionTableViewCell = tableview.dequeueReusableCell(withIdentifier: "SSVenueActionTableViewCell", for: indexPath) as! SSVenueActionTableViewCell
       cell.imageView?.loadImageUsingCacheWithURL(url: (venue?.bestPhoto?.prefix)! + "300x500" + (venue?.bestPhoto?.suffix)!)
+      //Scope of preview here
+      cell.imageView?.isUserInteractionEnabled = false
+      cell.ratingLbl.layer.zPosition = 1
+      cell.ratingLbl.text = String(describing: (venue?.rating)!)
+      cell.ratingLbl.backgroundColor = UIColor(hexString: (venue?.ratingColor)!)
+      cell.delegate = self
+      cell.venueId = venueId
+      
+      if reviews.count != 0{
+        if reviews[0].thumbsUp{
+          cell.thumbsUpBtn.setImage(UIImage(named:"thumbsUp_selected"), for: UIControlState.normal)
+        } else{
+          cell.thumbsUpBtn.setImage(UIImage(named:"thumbsUp"), for: UIControlState.normal)
+
+        }
+        
+        if reviews[0].thumbsDown{
+          cell.thumbsDownBtn.setImage(UIImage(named:"thumbsDown_selected"), for: UIControlState.normal)
+
+        } else{
+          cell.thumbsDownBtn.setImage(UIImage(named:"thumbsDown"), for: UIControlState.normal)
+
+        }
+      }
       
       return cell
-
+      
     case 1:
-
+      
       let cell : SSVenueLocationTableViewCell = tableview.dequeueReusableCell(withIdentifier: "SSVenueLocationTableViewCell", for: indexPath) as! SSVenueLocationTableViewCell
-      cell.locationLbl.text = getVenueDetails()
+      cell.locationLbl.text = venue?.location?.address!
+      cell.locationLbl.layer.zPosition = 1
+      cell.locationLbl.sizeToFit()
       return cell
       
     case 2:
@@ -183,30 +216,21 @@ extension SSVenueDetailsViewController: UITableViewDataSource{
       return cell
       
     case 3:
-
       
-      if indexPath.row <= 5{
-        
-        let tip = self.reviews[0].tips[indexPath.row]
-        
-        let cell : SSTipsListTableViewCell = tableview.dequeueReusableCell(withIdentifier: "SSTipsListTableViewCell", for: indexPath) as! SSTipsListTableViewCell
-        //For demo purpose only
-        cell.profileImage.loadImageUsingCacheWithURL(url: "http://www.american.edu/uploads/profiles/large/chris_palmer_profile_11.jpg")
-        //To be used feature
-        cell.tipImage.isHidden = true
-        cell.tipText.text = tip.text
-        return cell
-        
+      //Actually SSTipsListTableViewCell should be used
+      let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "tipCell")
+      
+      if reviews.count == 0{
+        cell.textLabel?.text = "Yet to add tip"
       } else{
         
-        let cell : SSMoreTipsTableViewCell = tableview.dequeueReusableCell(withIdentifier: "SSMoreTipsTableViewCell", for: indexPath) as! SSMoreTipsTableViewCell
-        cell.moreTipsBtn.titleLabel?.text = "See all \(venue?.tips?.count) tips"
+        let tip = self.reviews[0].tips[indexPath.row]
+        cell.textLabel?.text = tip.text
         return cell
         
       }
-      
     case 4:
-
+      
       let cell : SSVenueNearbySuggestionTableViewCell = tableview.dequeueReusableCell(withIdentifier: "SSVenueNearbySuggestionTableViewCell", for: indexPath) as! SSVenueNearbySuggestionTableViewCell
       return cell
       
@@ -214,8 +238,9 @@ extension SSVenueDetailsViewController: UITableViewDataSource{
       return UITableViewCell()
     }
     
-    
+    return UITableViewCell()
   }
+  
   
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     
@@ -230,7 +255,7 @@ extension SSVenueDetailsViewController: UITableViewDataSource{
     case 3:
       return "Tips by you"
     case 4:
-      return "Search near \(venue?.name!)"
+      return "Search near \(String(describing: (venue?.name)!))"
     default:
       return ""
     }
@@ -246,18 +271,25 @@ extension SSVenueDetailsViewController : UITableViewDelegate{
     case 0:
       return 300
     case 1:
-      return SSUIUtilities.getSizeForLabel(getVenueDetails(), font: UIFont(font: .helveticaRegular, size: 15)
+      return SSUIUtilities.getSizeForLabel((venue?.location?.address)!, font: UIFont(font: .helveticaRegular, size: 15)
         , width: tableView.frame.width - 60).height + 20
     case 2:
       return 108
     case 3:
-      return SSUIUtilities.getSizeForLabel(self.reviews[0].tips[indexPath.row].text as! String, font: UIFont(font: .helveticaRegular, size: 14)
-        , width: tableView.frame.width - 40).height + 20
+      if reviews.count != 0 {
+        return SSUIUtilities.getSizeForLabel(self.reviews[0].tips[indexPath.row].text , font: UIFont(font: .helveticaRegular, size: 14)
+          , width: tableView.frame.width - 40).height + 20
+      } else{
+        //For no tip cell
+        return 50
+      }
     case 4:
       return 60
     default:
       return 0
     }
+    
+    return 0
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -291,8 +323,38 @@ extension SSVenueDetailsViewController : SSLeaveTipDelegate{
     
     let vc = SSCommonUtilities.instantiateViewController("SSReviewViewController") as! SSReviewViewController
     vc.venueId = venueId
+    vc.venueName = venue?.name
     
     self.navigationController?.pushViewController(vc, animated: true)
+    
+  }
+}
+
+
+extension SSVenueDetailsViewController: VenueActionProtocol{
+  
+  func thumbsUpTapped(_ venueId: String) {
+    SSTipPersistenceService().saveThumbsUpFor(venueId: venueId)
+    //in completion block
+    //self.tableview.reloadSections(NSIndexSet(index: 0) as IndexSet, with: UITableViewRowAnimation.automatic)
+    //Lots of scope to update UI
+    
+  }
+  
+  func thumbsDownTapped(_ venueId: String) {
+    SSTipPersistenceService().saveThumbsDownFor(venueId: venueId)
+    //in completion block
+    //self.tableview.reloadSections(NSIndexSet(index: 0) as IndexSet, with: UITableViewRowAnimation.automatic)
+  }
+  
+  func leaveTipTapped(_ venueId: String) {
+    
+    let vc = SSCommonUtilities.instantiateViewController("SSReviewViewController") as! SSReviewViewController
+    vc.venueId = venueId
+    vc.venueName = venue?.name
+    self.navigationController?.pushViewController(vc, animated: true)
+    
+    //Scope to refresh this screen when user returns from Post Review screen.
     
   }
 }

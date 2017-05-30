@@ -20,50 +20,48 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0F-cx-wQ2" customClass="SSCenteredButton" customModule="IVP_Luncheon" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="-0.5" width="80" height="60"/>
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="60"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="naZ-JO-Hwn"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                        <state key="normal" title="Coffee" image="explore">
+                        <state key="normal" image="coffee">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4y-tM-3re" customClass="SSCenteredButton" customModule="IVP_Luncheon" customModuleProvider="target">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4y-tM-3re" customClass="SSCenteredButton" customModule="IVP_Luncheon" customModuleProvider="target">
                         <rect key="frame" x="80" y="0.0" width="80" height="60"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="RYc-Hq-6ca"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                        <state key="normal" title="Fun">
+                        <state key="normal" image="fun">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymz-po-BDC" customClass="SSCenteredButton" customModule="IVP_Luncheon" customModuleProvider="target">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymz-po-BDC" customClass="SSCenteredButton" customModule="IVP_Luncheon" customModuleProvider="target">
                         <rect key="frame" x="160" y="0.0" width="80" height="60"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="Odw-FX-3Zq"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                        <state key="normal" title="Dinner">
+                        <state key="normal" image="food">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyL-zD-7eo" customClass="SSCenteredButton" customModule="IVP_Luncheon" customModuleProvider="target">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyL-zD-7eo" customClass="SSCenteredButton" customModule="IVP_Luncheon" customModuleProvider="target">
                         <rect key="frame" x="240" y="0.0" width="80" height="60"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="fda-cQ-GLu"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                        <state key="normal" title="Lunch">
+                        <state key="normal" image="nightlife">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="pyL-zD-7eo" secondAttribute="trailing" id="CTQ-S8-d7q"/>
                     <constraint firstItem="X4y-tM-3re" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Dgz-Dr-LDv"/>
@@ -83,6 +81,9 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="explore" width="30" height="30"/>
+        <image name="coffee" width="30" height="30"/>
+        <image name="food" width="30" height="30"/>
+        <image name="fun" width="30" height="30"/>
+        <image name="nightlife" width="30" height="30"/>
     </resources>
 </document>

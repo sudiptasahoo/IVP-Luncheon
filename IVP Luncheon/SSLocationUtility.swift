@@ -9,42 +9,55 @@
 import UIKit
 
 class SSLocationUtility: NSObject {
-
-    class func saveUpdatedCoordinate(lat: String, long: String, accuracy: String){
-        
-        var dict = [String: Any]()
-        dict[Constants.KEYS.COORDINATE.USER_LATITUDE] = lat
-        dict[Constants.KEYS.COORDINATE.USER_LONGITUDE] = long
-        dict[Constants.KEYS.COORDINATE.USER_ACCURACY] = accuracy
-
-        UserDefaults.standard.set(dict, forKey: Constants.KEYS.COORDINATE.USER_COORDINATE)
-        UserDefaults.standard.synchronize()
-    }
+  
+  class func saveUpdatedCoordinate(lat: String, long: String, accuracy: String, locality: String){
     
-    class func getUserLatestCoordinate() -> [String: Any]{
-        
-        return UserDefaults.standard.value(forKey: Constants.KEYS.COORDINATE.USER_COORDINATE) as! [String : Any]
-    }
+    var dict = [String: Any]()
+    dict[Constants.KEYS.COORDINATE.USER_LATITUDE] = lat
+    dict[Constants.KEYS.COORDINATE.USER_LONGITUDE] = long
+    dict[Constants.KEYS.COORDINATE.USER_ACCURACY] = accuracy
+    dict[Constants.KEYS.COORDINATE.USER_LOCALITY] = locality
     
-    class func getUserLatestLatitude() -> String{
-        
-        let coordinate = UserDefaults.standard.value(forKey: Constants.KEYS.COORDINATE.USER_COORDINATE) as! [String : Any]
-        
-        return coordinate[Constants.KEYS.COORDINATE.USER_LATITUDE] as! String
-    }
     
-    class func getUserLatestLongitude() -> String{
-        
-        let coordinate = UserDefaults.standard.value(forKey: Constants.KEYS.COORDINATE.USER_COORDINATE) as! [String : Any]
-        
-        return coordinate[Constants.KEYS.COORDINATE.USER_LONGITUDE] as! String
-    }
+    UserDefaults.standard.set(dict, forKey: Constants.KEYS.COORDINATE.USER_COORDINATE)
+    UserDefaults.standard.synchronize()
+  }
+  
+  class func getUserLatestCoordinate() -> [String: Any]{
     
-    class func getUserLatestAccuracy() -> String{
-        
-        let coordinate = UserDefaults.standard.value(forKey: Constants.KEYS.COORDINATE.USER_COORDINATE) as! [String : Any]
-        
-        return coordinate[Constants.KEYS.COORDINATE.USER_ACCURACY] as! String
-    }
+    return UserDefaults.standard.value(forKey: Constants.KEYS.COORDINATE.USER_COORDINATE) as! [String : Any]
+  }
+  
+  class func getUserLatestLatitude() -> String?{
     
+    if let coordinate = UserDefaults.standard.value(forKey: Constants.KEYS.COORDINATE.USER_COORDINATE) as? [String : Any]{
+      return coordinate[Constants.KEYS.COORDINATE.USER_LATITUDE] as? String
+    }
+    return nil
+  }
+  
+  class func getUserLatestLongitude() -> String?{
+    
+    if let coordinate = UserDefaults.standard.value(forKey: Constants.KEYS.COORDINATE.USER_COORDINATE) as? [String : Any]{
+      return coordinate[Constants.KEYS.COORDINATE.USER_LONGITUDE] as? String
+    }
+    return nil
+  }
+  
+  class func getUserLatestAccuracy() -> String?{
+    
+    if let coordinate = UserDefaults.standard.value(forKey: Constants.KEYS.COORDINATE.USER_COORDINATE) as? [String : Any]{
+      return coordinate[Constants.KEYS.COORDINATE.USER_ACCURACY] as? String
+    }
+    return nil
+  }
+  
+  class func getUserLatestLocality() -> String?{
+    
+    if let coordinate = UserDefaults.standard.value(forKey: Constants.KEYS.COORDINATE.USER_COORDINATE) as? [String : Any]{
+      return coordinate[Constants.KEYS.COORDINATE.USER_LOCALITY] as? String
+    }
+    return nil
+  }
+  
 }

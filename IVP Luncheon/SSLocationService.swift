@@ -60,26 +60,34 @@ extension SSLocationService : CLLocationManagerDelegate{
     let latestLocation = locations[0]
     print("didUpdateLocations with accuracy \(latestLocation.horizontalAccuracy)")
     
-    CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error)->Void in
-      if (error != nil) {
-        print("Reverse geocoder failed with error" + (error?.localizedDescription)!)
-        return
-      }
-      
-      if (placemarks?.count)! > 0 {
-        let pm = placemarks?[0]
-        self.displayLocationInfo(pm!)
-      } else {
-        print("Problem with the data received from geocoder")
-      }
-    })
+    
     
     if latestLocation.horizontalAccuracy < 100{
-      //Start Monitoring
-      print("stopped updating location")
-      self.startMonitoring(location: latestLocation)
-      self.save(latestLocation)
-      manager.stopUpdatingLocation()
+      
+      
+      
+      
+      CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error)->Void in
+        if (error != nil) {
+          print("Reverse geocoder failed with error" + (error?.localizedDescription)!)
+          return
+        }
+        
+        if (placemarks?.count)! > 0 {
+          let pm = placemarks?[0]
+          self.displayLocationInfo(pm!)
+          
+          //Start Monitoring
+          print("stopped updating location")
+          self.startMonitoring(location: latestLocation)
+          self.save(latestLocation, locality: (pm?.locality)!)
+          manager.stopUpdatingLocation()
+          
+          
+        } else {
+          print("Problem with the data received from geocoder")
+        }
+      })
     }
     
   }
@@ -155,8 +163,8 @@ extension SSLocationService{
     print("Geofence triggered!")
   }
   
-  func save(_ location: CLLocation){
-    SSLocationUtility.saveUpdatedCoordinate(lat: String(location.coordinate.latitude), long: String(location.coordinate.longitude), accuracy: String(location.horizontalAccuracy))
+  func save(_ location: CLLocation, locality: String){
+    SSLocationUtility.saveUpdatedCoordinate(lat: String(location.coordinate.latitude), long: String(location.coordinate.longitude), accuracy: String(location.horizontalAccuracy), locality: locality)
   }
 }
 

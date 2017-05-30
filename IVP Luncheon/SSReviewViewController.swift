@@ -9,28 +9,29 @@
 import UIKit
 
 class SSReviewViewController: UIViewController {
-
-    @IBOutlet weak var reviewTF: UITextField!
-    @IBOutlet weak var postBtn: UIButton!
-    var venueId : String!
+  
+  @IBOutlet weak var reviewTF: UITextField!
+  @IBOutlet weak var postBtn: UIButton!
+  var venueId : String!
+  var venueName : String!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    reviewTF.delegate = self
+    self.title = venueName
+    // Do any additional setup after loading the view.
+  }
+  @IBAction func postBtnAction(_ sender: UIButton) {
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        reviewTF.delegate = self
-        // Do any additional setup after loading the view.
-    }
-    @IBAction func postBtnAction(_ sender: UIButton) {
-
-        SSTipPersistenceService().save(reviewTF.text!, forVenueId: venueId)
-        self.navigationController?.popViewController(animated: true)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    SSTipPersistenceService().save(reviewTF.text!, forVenueId: venueId)
+    self.navigationController?.popViewController(animated: true)
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
 }
 
 

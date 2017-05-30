@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import RealmSwift
 
-
+//This is actually searchviewcontroller
 class SSLandingViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   
   
@@ -49,12 +49,31 @@ class SSLandingViewController : UIViewController, UICollectionViewDelegate, UICo
     refresher.addTarget(self, action: #selector(getFoursquareVenues), for: .valueChanged)
     collectionView!.addSubview(refresher)
     
-    self.title = "Explore"
+    if let locality = SSLocationUtility.getUserLatestLocality(){
+      self.title = "Explore near \(locality))"
+    } else{
+      self.title = "Explore"
+    }
 
     showSplashScreen()
     
-    getFoursquareVenues();
-    
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    self.loader.startAnimating()
+
+    //More intuitive checks can me made here
+    //If location disabled then ask user to enable
+    if SSLocationUtility.getUserLatestLatitude() != nil{
+      getFoursquareVenues()
+    } else{
+    }
+  }
+  
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    self.hideSplashScreen()
   }
   
   func showSplashScreen(){
@@ -79,10 +98,11 @@ class SSLandingViewController : UIViewController, UICollectionViewDelegate, UICo
   
   func getFoursquareVenues(){
     self.collectionView.layoutIfNeeded()
-    SSApiService().exploreVenues(categoryId: Constants.FOURSQUARE.FOOD_CATEGORY_ID, lat: SSLocationUtility.getUserLatestLatitude(), long: SSLocationUtility.getUserLatestLongitude(), success: { (data) in
+    SSApiService().exploreVenues(categoryId: Constants.FOURSQUARE.FOOD_CATEGORY_ID, lat: SSLocationUtility.getUserLatestLatitude()!, long: SSLocationUtility.getUserLatestLongitude()!, success: { [weak self] (data) in
       
-      if(self.groups.count==0){
-        self.hideSplashScreen()
+      if(self?.groups.count==0){
+        self?.hideSplashScreen()
+        self?.loader.stopAnimating()
       }
       
       do {
@@ -94,13 +114,14 @@ class SSLandingViewController : UIViewController, UICollectionViewDelegate, UICo
         if (response != nil){
           
           let venueResponse = ExploreVenueResponse.init(dictionary: response.object(forKey: "response") as! NSDictionary)
-          self.groups = (venueResponse?.groups)!
+          self?.groups = (venueResponse?.groups)!
           
           DispatchQueue.main.async {
             
-            self.collectionView.reloadData()
-            self.collectionView.layoutIfNeeded()
-            self.refresher.endRefreshing()
+            self?.collectionView.reloadData()
+            self?.collectionView.layoutIfNeeded()
+            self?.refresher.endRefreshing()
+            self?.title = "Explore near \(SSLocationUtility.getUserLatestLocality()!)"
           }
         }
         
@@ -109,7 +130,7 @@ class SSLandingViewController : UIViewController, UICollectionViewDelegate, UICo
         
         print("JSON Processing Failed \(error)")
         DispatchQueue.main.async {
-          self.refresher.endRefreshing()
+          self?.refresher.endRefreshing()
         }
       }
       
