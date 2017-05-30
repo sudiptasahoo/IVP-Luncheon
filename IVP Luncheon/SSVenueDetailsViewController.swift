@@ -204,7 +204,13 @@ extension SSVenueDetailsViewController: UITableViewDataSource{
     case 1:
       
       let cell : SSVenueLocationTableViewCell = tableview.dequeueReusableCell(withIdentifier: "SSVenueLocationTableViewCell", for: indexPath) as! SSVenueLocationTableViewCell
-      cell.locationLbl.text = venue?.location?.address!
+      
+      cell.locationLbl.text = ""
+      if let location = venue?.location{
+        if location.address != nil{
+          cell.locationLbl.text = venue?.location?.address!
+        }
+      }
       cell.locationLbl.layer.zPosition = 1
       cell.locationLbl.sizeToFit()
       return cell
@@ -271,8 +277,15 @@ extension SSVenueDetailsViewController : UITableViewDelegate{
     case 0:
       return 300
     case 1:
-      return SSUIUtilities.getSizeForLabel((venue?.location?.address)!, font: UIFont(font: .helveticaRegular, size: 15)
-        , width: tableView.frame.width - 60).height + 20
+      
+      if let location = venue?.location{
+        if location.address != nil{
+          return SSUIUtilities.getSizeForLabel(location.address!, font: UIFont(font: .helveticaRegular, size: 15)
+            , width: tableView.frame.width - 60).height + 20
+        }
+      }
+      return 50
+     
     case 2:
       return 108
     case 3:
