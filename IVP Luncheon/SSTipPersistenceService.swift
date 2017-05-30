@@ -30,8 +30,6 @@ class SSTipPersistenceService: NSObject {
         var tip = LocalTip()
         tip.text = reviewText
         result[0].tips.append(tip)
-        
-        realm.add(result)
       }
       
     } else{
@@ -63,7 +61,6 @@ class SSTipPersistenceService: NSObject {
       try! realm.write {
         result[0].thumbsUp = true
         result[0].thumbsDown = false
-        realm.add(result)
       }
     } else{
       var review = Review()
@@ -85,7 +82,6 @@ class SSTipPersistenceService: NSObject {
       try! realm.write {
         result[0].thumbsDown = true
         result[0].thumbsUp = false
-        realm.add(result)
       }
     } else{
       var review = Review()
