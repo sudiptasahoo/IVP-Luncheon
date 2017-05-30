@@ -173,12 +173,19 @@ extension SSVenueDetailsViewController: UITableViewDataSource{
     case 0:
       
       let cell : SSVenueActionTableViewCell = tableview.dequeueReusableCell(withIdentifier: "SSVenueActionTableViewCell", for: indexPath) as! SSVenueActionTableViewCell
-      cell.imageView?.loadImageUsingCacheWithURL(url: (venue?.bestPhoto?.prefix)! + "300x500" + (venue?.bestPhoto?.suffix)!)
+      if let bestPhoto = venue?.bestPhoto{
+         cell.imageView?.loadImageUsingCacheWithURL(url: (bestPhoto.prefix)! + "300x500" + (bestPhoto.suffix)!)
+      }
       //Scope of preview here
       cell.imageView?.isUserInteractionEnabled = false
       cell.ratingLbl.layer.zPosition = 1
-      cell.ratingLbl.text = String(describing: (venue?.rating)!)
-      cell.ratingLbl.backgroundColor = UIColor(hexString: (venue?.ratingColor)!)
+      if let rating = venue?.rating{
+        cell.ratingLbl.text = String(describing: rating)
+        cell.ratingLbl.backgroundColor = UIColor(hexString: (venue?.ratingColor)!)
+      } else{
+        cell.ratingLbl.text = "--"
+        cell.ratingLbl.backgroundColor = .gray
+      }
       cell.delegate = self
       cell.venueId = venueId
       cell.selectionStyle = .none
